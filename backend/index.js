@@ -36,19 +36,19 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
-// Configuración de CORS
-const origenesPermitidos = ["http://127.0.0.1:3001", "http://127.0.0.1:5501",  "https://agro-fresh-3.onrender.com, "https://agro-fresh-3.onrender.com", "https://agro-fresh-backend.onrender.com/api/login"];
+// // Configuración de CORS
+// const origenesPermitidos = ["http://127.0.0.1:3001", "http://127.0.0.1:5501",  "https://agro-fresh-3.onrender.com, "https://agro-fresh-3.onrender.com", "https://agro-fresh-backend.onrender.com/api/login"];
 
-const corsOption = {
-  origin: (origin, callback) => {
-    if (!origin || origenesPermitidos.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Cliente no permitido"));
-    }
-  },
-  credentials: true, // Permite cookies y autenticación
-};
+// const corsOption = {
+//   origin: (origin, callback) => {
+//     if (!origin || origenesPermitidos.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Cliente no permitido"));
+//     }
+//   },
+//   credentials: true, // Permite cookies y autenticación
+// };
 // Solución temporal para depuración
 app.use(cors({
   origin: true,  // Permite todas las solicitudes
