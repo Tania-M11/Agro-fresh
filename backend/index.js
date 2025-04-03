@@ -52,7 +52,7 @@ const corsOption = {
 app.use(cors(corsOption)); 
 
 // Rutas para servir archivos HTML
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "pages", "index.html")));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname+ '/../frontend/register.html')));
 app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "pages", "register.html")));
 app.get("/forgot-password", (req, res) => res.sendFile(path.join(__dirname, "pages", "forgot-password.html")));
 
