@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/Order.js"></script>
+    <script src="./js/burguerMenu.js"></script>
+    <script
+      src="https://kit.fontawesome.com/645a463f83.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Josefin+Sans&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="/frontend/main.html" class="logo">
+          <div class="main-logo">
+            <h1>
+              Agro<span style="color: #70e000">f</span
+              ><span class="logo" style="color: #006400">re</span
+              ><span class="logo" style="color: #008000">sh</span>
+            </h1>
+          </div>
+        </a>
+  
+        <div class="icons-menu">
+          <a href="perfilComprador.html" class="icon-link">
+            <i class="fas fa-user"></i> <!-- Ícono de cuenta -->
+          </a>
+        
+          <a href="carrito.html" class="icon-link link-car">
+            <i class="fas fa-shopping-cart"></i> <!-- Ícono de carrito -->
+            <span class="item-count" id="cart-counter">0</span>
+          </a>
+          
+          <div class="burger-menu" id="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header> 
+      
+      <nav class="navigation hidden">
+          <div class="nav-links-container">
+            
+                <a href="./tienda.html">Tienda</a>
+                <a href="./main.html#nosotros">Sobre nosotros</a>
+                <a href="./main.html#preguntas">Preguntas frecuentes</a>
+                <a href="./main.html#reciclaje">Recicla</a>
+                <a href="./main.html#contacto">Contacto</a>
+                <a href="./historial-compras.html">Historial de compras</a>
+               
+              
+         
+          </div>
+      </nav>
+    <section class="product">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Id de la compra</th>
+                    <th>Fecha</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

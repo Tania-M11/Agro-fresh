@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="./css/styleVendedor.css" />
+  <link rel="stylesheet" href="./css/styleProfile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Josefin+Sans&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script
+    src="https://kit.fontawesome.com/645a463f83.js"
+    crossorigin="anonymous"
+  ></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Agro<span>fresh</span></a>
+      <a href="./notificacion.html" class="campana">
+        <i class="fa-solid fa-bell"></i>
+        <span class="notification-counter hidden">0</span>
+      </a>
+    </header>
+
+    <main>
+      <h1>Panel de Vendedor</h1>
+
+      <div class="panel-container">
+        <div class="nav-panel">
+          <a href="seller.html" class="nav-item active">Agregar Producto</a>
+          <a href="stock-productos.html" class="nav-item">Mis Productos</a>
+          <a href="historial-ventas.html" class="nav-item">Ventas</a>
+          <a href="perfil-vendedor.html" class="nav-item">Mi Perfil</a>
+        </div>
+
+        <div class="content-panel">
+          <!-- insertar aqui datos dinamicamente -->
+          <div class="profile-container">
+          <div class="profile-header">
+            <div class="profile-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-title">
+              <h1 id="user-name">Cargando...</h1>
+              <p id="user-role">Comprador</p>
+            </div>
+          </div>
+      
+          <div class="profile-info">
+            <div class="info-card">
+              <h3>Información personal</h3>
+              <div class="info-item">
+                <div class="info-label">Nombre:</div>
+                <div id="user-fullname">Cargando...</div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">Identificación:</div>
+                <div id="user-id">Cargando...</div>
+              </div>
+            </div>
+      
+            <div class="info-card">
+              <h3>Información de contacto</h3>
+              <div class="info-item">
+                <div class="info-label">Correo:</div>
+                <div id="user-email">Cargando...</div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="btn-container">
+            <button class="btn-logout" id="btn-logout">Cerrar Sesión</button>
+            <button class="btn-edit" id="btn-edit">Editar Perfil</button>
+          </div>
+        </div>
+      
+        <!-- Modal para editar perfil -->
+        <div id="edit-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Editar Perfil</h2>
+              <span class="close">&times;</span>
+            </div>
+            <form id="edit-form">
+              <div class="form-group">
+                <label for="edit-name">Nombre</label>
+                <input type="text" id="edit-name" name="user" required>
+              </div>
+              <div class="form-group">
+                <label for="edit-email">Correo</label>
+                <input type="email" id="edit-email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="edit-password">Nueva Contraseña</label>
+                <input type="password" id="edit-password" name="password">
+                <button type="button" class="password-toggle">
+                  <i class="fa fa-eye-slash"></i>
+                </button>
+              </div>
+              <div class="form-group">
+                <label for="edit-confirm-password">Confirmar Nueva Contraseña</label>
+                <input type="password" id="edit-confirm-password" name="passwordVerification">
+                <button type="button" class="password-toggle">
+                  <i class="fa fa-eye-slash"></i>
+                </button>
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn-cancel" id="btn-cancel">Cancelar</button>
+                <button type="submit" class="btn-save">Guardar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+        
+        </div>
+    
+    </main>
+    <script src="./js/profileComprador.js"></script>
+
+  </body>
+</html>

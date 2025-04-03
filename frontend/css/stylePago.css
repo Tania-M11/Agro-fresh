@@ -1,0 +1,574 @@
+:root {
+    --title-font: "Arima", Times, serif;
+    --paragraph-font: "Oswald", sans-serif;
+    --paragraph-font-two: "Josefin Sans", sans-serif;
+    --accent-red: #ff0033;
+    --cart-green: #006400;
+    --light-gray: #eaeaea;
+    --price-red: #e60023;
+    --add-to-cart-red: #ba0909;
+  }
+
+
+h3 {
+font-family: var(--paragraph-font);
+}
+button {
+font-family: var(--paragraph-font);
+}
+
+.btn{
+background-color: var(--accent-red);
+color: white;
+padding: 10px;
+border-radius: 10%;
+border-color: red;
+
+}
+.checkout-container {
+display: flex;
+max-width: 1200px;
+margin: 100px auto 20px;
+gap: 20px;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+
+}
+input{
+    font-family: 'Montserrat', sans-serif;
+
+}
+.checkout-details {
+flex: 2;
+}
+
+
+.summary-section {
+flex: 1;
+background-color: white;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.checkout-section {
+background-color: white;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+color: #333;
+}
+
+.section-title span {
+margin-left: 10px;
+color: #888;
+font-size: 14px;
+}
+
+.user-info,
+.shipping-info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.payment-methods {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.payment-method {
+border: 1px solid #eaeaea;
+border-radius: 5px;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between; /* Separa el texto y la imagen */
+cursor: pointer;
+}
+
+
+.payment-method-details {
+flex-grow: 1;
+}
+
+/* Ajustes específicos para cada imagen */
+.payment-method img {
+width: auto;
+height: auto;
+max-height: 30px; /* Valor base */
+}
+
+.payment-method img[alt="Tarjeta de regalo"] {
+max-height: 40px;
+}
+
+.payment-method img[alt="Paga después"] {
+max-height: 18px;
+}
+
+.payment-method img[alt="Mastercard"]
+{
+max-height: 25px;
+}
+.payment-method img[alt="VISA"]{
+max-height: 20px;
+}
+
+.payment-method img[alt="PSE"] {
+max-height: 26px;
+}
+
+.payment-method img[alt="Efectivo"] {
+max-height: 24px;
+}
+
+/* Ajustes especiales para MercadoPago y Efecty */
+.payment-method.multiple-logos {
+display: flex;
+justify-content: space-between;
+}
+
+.payment-method.multiple-logos .logos-container {
+display: flex;
+gap: 10px;
+}
+
+.payment-method img[alt="MercadoPago"] {
+max-height: 30px;
+}
+
+.payment-method img[alt="Efecty"] {
+max-height: 27px;
+}
+/* 📌 Contenedor principal */
+.summary-section {
+display: flex;
+flex-direction: column;
+max-width: 400px;
+border: 1px solid #ddd;
+padding: 15px;
+border-radius: 8px;
+background: #fff;
+}
+
+/* 📌 Sección de productos con scroll */
+.cart-items {
+max-height: 250px; /* Altura máxima antes de la barra */
+overflow-y: auto;  /* Activa la barra de desplazamiento */
+padding-right: 10px; 
+margin-bottom: 15px;
+border-bottom: 1px solid #ddd; 
+}
+
+/* 📌 Cada producto dentro del carrito */
+.cart-item {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 15px;
+border-bottom: 1px solid #eaeaea;
+padding-bottom: 15px;
+}
+
+/* 📌 Ajuste de la imagen del producto */
+.cart-item img {
+width: 80px;
+height: 80px;
+object-fit: cover;
+border-radius: 5px;
+margin-right: 15px;
+}
+
+/* 📌 Estilización de los detalles del producto */
+.cart-item-details {
+flex-grow: 1;
+}
+
+/* 📌 Contenedor de cantidad con borde */
+.item-quantity {
+display: flex;
+align-items: center;
+gap: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+padding: 5px;
+}
+
+/* 📌 Botón de cantidad */
+.quantity-btn {
+background: none;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+}
+
+/* 📌 Imagen de eliminar producto */
+.eliminaProducto img {
+width: 20px;
+height: 20px;
+cursor: pointer;
+}
+
+/* 📌 Sección de cupones */
+.coupon-section {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+/* 📌 Input del cupón */
+.coupon-input {
+flex-grow: 1;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+/* 📌 Botón de comprar ahora */
+.comprar-ahora-btn {
+background-color: var(--accent-red);
+color: white;
+border: none;
+padding: 12px 24px;
+border-radius: 5px;
+width: 100%;
+cursor: pointer;
+font-size: 16px;
+}
+
+
+.payment-method.selected {
+    border: 2px solid #5be945; /* Color azul para resaltar */
+    border-radius: 8px;
+}
+
+
+.form-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1000;
+justify-content: center;
+align-items: center;
+}
+
+.form-container {
+background-color: white;
+padding: 30px;
+border-radius: 10px;
+width: 90%;
+max-width: 500px;
+max-height: 80%;
+overflow-y: auto;
+}
+
+.form-container input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.edit-section-btn {
+background-color: var(--accent-red);
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 5px;
+cursor: pointer;
+margin-left: 10px;
+}
+
+.close-form-btn {
+background-color: #ddd;
+color: #333;
+border: none;
+padding: 8px 15px;
+border-radius: 5px;
+cursor: pointer;
+margin-right: 10px;
+}
+
+.form-actions {
+display: flex;
+justify-content: flex-end;
+margin-top: 20px;
+}
+.form-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.form-container {
+background-color: white;
+width: 100%;
+max-width: 500px;
+border-radius: 10px;
+padding: 30px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+max-height: 90vh;
+overflow-y: auto;
+}
+
+.form-header {
+margin-bottom: 20px;
+text-align: left;
+}
+
+.form-header .form-icon {
+color: #ff6b6b;
+font-weight: bold;
+margin-right: 10px;
+}
+
+.form-header h2 {
+display: inline;
+color: #333;
+margin-bottom: 10px;
+}
+
+.form-header p {
+color: #666;
+margin-top: 10px;
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 5px;
+color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.error-message {
+color: red;
+font-size: 0.8em;
+margin-top: 5px;
+}
+.checkbox-group {
+display: flex;
+align-items: center; /* Alinea verticalmente checkbox y texto */
+gap: 10px; /* Espaciado entre checkbox y texto */
+}
+
+.checkbox-group input[type="checkbox"] {
+margin: 0; /* Elimina márgenes adicionales */
+width: 16px; /* Asegura un tamaño uniforme */
+height: 16px;
+}
+
+.checkbox-group label {
+flex: 1; /* Hace que el texto ocupe el espacio disponible */
+text-align: left; /* Asegura que el texto quede alineado */
+line-height: 1.2; /* Reduce la separación entre líneas */
+}
+
+.continue-btn {
+width: 100%;
+background-color: #ff6b6b;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 15px;
+}
+
+.delivery-method .delivery-option {
+display: flex;
+align-items: center;
+border: 1px solid #ddd;
+border-radius: 5px;
+padding: 10px;
+}
+
+.delivery-option input[type="radio"] {
+margin-right: 10px;
+}
+
+.delivery-option .delivery-price {
+margin-left: auto;
+color: #ff6b6b;
+}
+
+.address-select {
+display: flex;
+align-items: center;
+background-color: #20c997;
+color: white;
+padding: 10px;
+border-radius: 5px;
+position: relative;
+gap: 10px;
+}
+
+.address-icon {
+flex-shrink: 0;
+}
+
+.address-text {
+flex-grow: 1;
+}
+
+.address-input {
+flex-grow: 1;
+padding: 5px;
+border: none;
+border-radius: 3px;
+display: none;
+}
+
+.address-change {
+margin-left: auto;
+text-decoration: underline;
+cursor: pointer;
+}
+@media (max-width: 768px) {
+.checkout-container {
+    flex-direction: column; /* Hace que las secciones se apilen verticalmente */
+    max-width: 100%; /* Ocupa todo el ancho */
+    margin: 20px auto; /* Reduce márgenes */
+    padding: 10px;
+}
+
+.checkout-details, 
+.summary-section {
+    flex: none;
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 20px; /* Espacio entre las secciones */
+}
+
+.user-info, 
+.shipping-info {
+    flex-direction: column; /* Ajusta formularios y detalles */
+    align-items: flex-start;
+}
+
+.payment-method {
+    flex-direction: column;
+    text-align: center;
+}
+
+.coupon-section {
+    flex-direction: column;
+}
+
+.coupon-input {
+    width: 100%;
+}
+
+.comprar-ahora-btn {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.cart-items {
+    max-height: 200px; /* Reduce el tamaño del scroll */
+}
+
+.cart-item {
+    flex-direction: column; /* Pone la imagen y los detalles en columna */
+    align-items: center;
+    text-align: center;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.item-quantity {
+    justify-content: center;
+}
+
+.form-container {
+    width: 90%;
+}
+}
+.cancel-btn {
+    display: flex;
+    align-self: center;
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* Price display styling */
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+.discounted-price {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.continue-btn, .cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+#user-email a {
+    text-decoration: none;
+    color: #006400;
+  }
+  #total-amount{
+color: #006400;
+  }
+  #savings-amount{
+    color: #006400;
+  }

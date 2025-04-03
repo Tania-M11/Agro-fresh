@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styleVendedor.css" />
+    <link rel="stylesheet" href="./css/styleStock.css">
+    <script type="module" src="./js/product.js"></script>
+    <script src="./js/burguerMenu.js"></script>
+    <script
+      src="https://kit.fontawesome.com/645a463f83.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Josefin+Sans&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Productos</title>
+  </head>
+  
+  <body>
+    <header>
+      <a href="#" class="logo">Agro<span>fresh</span></a>
+      <a href="./notificacion.html" class="campana">
+        <i class="fa-solid fa-bell"></i>
+        <span class="notification-counter hidden">0</span>
+      </a>
+    </header>
+
+    
+    <div class="panel-container">
+        <div class="nav-panel">
+            <a href="seller.html" class="nav-item">Agregar Producto</a>
+            <a href="stock-productos.html" class="nav-item active">Mis Productos</a>
+            <a href="historial-ventas.html" class="nav-item">Ventas</a>
+            <a href="perfil-vendedor.html" class="nav-item">Mi Perfil</a>
+        </div>
+        
+        <div class="content-panel">
+            <h2 class="panel-title">Mis Productos</h2>
+            
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body">
+                    <!-- Products will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="edit-product-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Editar Producto</h2>
+            <form id="edit-product-form">
+                <div class="form-row">
+                  <input 
+                    type="text" 
+                    id="edit-name" 
+                    placeholder="Nombre del producto (ej: fresa)" 
+                    pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$"
+                    title="Solo se permiten letras (sin números ni caracteres especiales)"
+                    required
+                  >
+                  <input 
+                    type="number" 
+                    id="edit-price" 
+                    placeholder="Precio (mínimo 100 COP)" 
+                    step="0.01" 
+                    min="100"
+                    title="El precio debe ser mayor a 100 COP"
+                    required
+                  >
+                </div>
+           <div class="descuento">
+            <p>Aplicar descuento</p>
+            <input 
+                    type="number" 
+                    id="add-discount" 
+                    placeholder="% " 
+                    min="1"
+                    step="1"
+                    max="100"
+                    title="El descuento debe ser un número entero mayor a 0"
+                   
+                  >
+           </div>
+                
+                <select id="edit-category" required>
+                  <option value="" disabled>Seleccionar categoría</option>
+                  <option value="frutas">Frutas</option>
+                  <option value="verduras">Verduras</option>
+                  <option value="tuberculos">Tubérculos</option>
+                  <option value="legumbres">Legumbres</option>
+                  <option value="cereales">Cereales</option>
+                  <option value="condimentos">Condimentos</option>
+                  <option value="pecuarios">Productos Pecuarios</option>
+                  <option value="derivados">Productos Derivados</option>
+                </select>
+                
+                <textarea 
+                  id="edit-description" 
+                  placeholder="Descripción detallada del producto" 
+                  required
+                ></textarea>
+                
+                <div class="form-row">
+                  <input 
+                    type="number" 
+                    id="edit-stock" 
+                    placeholder="Stock disponible (mayor a 0)" 
+                    min="1"
+                    step="1"
+                    title="El stock debe ser un número entero mayor a 0"
+                    required
+                  >
+                  <input 
+                    type="text" 
+                    id="edit-unit" 
+                    placeholder="Unidad (kg, unidad, docena, etc.)" 
+                    pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$"
+                    title="Solo se permiten letras para la unidad"
+                    required
+                  >
+                </div>
+                
+                <button type="submit">Guardar Cambios</button>
+              </form>
+        </div>
+    </div>
+    <script src="./js/stock-productos.js"></script>
+</body>
+</html>

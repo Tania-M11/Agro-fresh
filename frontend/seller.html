@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Productos</title>
+    <link rel="stylesheet" href="./css/styleVendedor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Josefin+Sans&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/645a463f83.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+ 
+  <body>
+    <header>
+      <a href="#" class="logo">Agro<span>fresh</span></a>
+      <a href="./notificacion.html" class="campana">
+        <i class="fa-solid fa-bell"></i>
+        <span class="notification-counter hidden">0</span>
+      </a>
+    </header>
+    
+
+    <main>
+      <h1>Panel de Vendedor</h1>
+
+      <div class="panel-container">
+        <div class="nav-panel">
+          <a href="seller.html" class="nav-item active">Agregar Producto</a>
+          <a href="stock-productos.html" class="nav-item" >Mis Productos</a>
+          <a href="historial-ventas.html" class="nav-item">Ventas</a>
+          <a href="perfil-vendedor.html" class="nav-item">Mi Perfil</a>
+        </div>
+
+        <div class="content-panel">
+          <h2 class="panel-title">Agregar Nuevo Producto </h2>
+          <a href="./assets/pdf/PDF.pdf" class="pdf" target="_blank">Guía Aquí</a>
+          
+<form id="productForm" enctype="multipart/form-data">
+  <div class="form-row">
+    <input
+      type="text"
+      id="name"
+      placeholder="Nombre del producto (ej: fresa)"
+      pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$"
+      title="Solo se permiten letras (sin números ni caracteres especiales)"
+      required
+    />
+    <input
+      type="number"
+      id="price"
+      placeholder="Precio (mínimo 100 COP)"
+      step="0.01"
+      min="100"
+      title="El precio debe ser mayor a 100 COP "
+      required
+    />
+  </div>
+  
+  <select id="category" required>
+    <option value="" disabled selected>Seleccionar categoría</option>
+    <option value="frutas">Frutas</option>
+    <option value="verduras">Verduras</option>
+    <option value="tuberculos">Tubérculos</option>
+    <option value="legumbres">Legumbres</option>
+    <option value="cereales">Cereales</option>
+    <option value="condimentos">Condimentos</option>
+    <option value="pecuarios">Productos Pecuarios</option>
+    <option value="derivados">Productos Derivados</option>
+    
+  </select>
+  
+  <textarea
+    id="description"
+    placeholder="Descripción detallada del producto"
+    required
+  ></textarea>
+  
+  <div class="form-group">
+    <label for="productImage">Imagen del producto:</label>
+    <input type="file" id="productImage" name="image" accept="image/*" required />
+    <div id="imagePreview" class="image-preview"></div>
+  </div>
+  
+  <div class="form-row">
+    <input
+      type="number"
+      id="stock"
+      placeholder="Stock disponible (mayor a 0)"
+      min="1"
+      step="1"
+      title="El stock debe ser un número entero mayor a 0"
+      required
+    />
+    <input
+      type="text"
+      id="unit"
+      placeholder="Unidad (kg, unidad, docena, etc.)"
+      pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$"
+      title="Solo se permiten letras para la unidad"
+      required
+    />
+  </div>
+ <!-- Reemplazar la sección del input de fecha en el formulario existente -->
+<div class="form-group">
+  <label for="expirationDate">Fecha de vencimiento:</label>
+  <input 
+    type="date" 
+    id="expirationDate" 
+    name="expirationDate"
+    required
+  />
+  <small class="form-text">La fecha de vencimiento no puede exceder 1 mes a partir de hoy</small>
+</div>
+
+  <button type="submit">Agregar Producto</button>
+</form>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() { 
+        const productForm = document.getElementById('productForm');
+        const imageInput = document.getElementById('productImage');
+        const imagePreview = document.getElementById('imagePreview');
+        const nameInput = document.getElementById('name');
+        const priceInput = document.getElementById('price');
+        const stockInput = document.getElementById('stock');
+        const unitInput = document.getElementById('unit');
+        const expirationDateInput = document.getElementById('expirationDate');
+        const description = document.getElementById('description').value.trim();
+        const category = document.getElementById('category').value;
+    
+        // Función para obtener y actualizar el contador de notificaciones
+        async function updateNotificationCounter() {
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) return;
+                
+                const response = await fetch('http://localhost:3001/api/notifications/count', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (!response.ok) throw new Error('Error al obtener conteo de notificaciones');
+                
+                const data = await response.json();
+                const counter = document.querySelector('.notification-counter');
+                
+                if (data.count > 0) {
+                    counter.textContent = data.count;
+                    counter.classList.remove('hidden');
+                } else {
+                    counter.textContent = '0';
+                    counter.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error('Error al actualizar contador de notificaciones:', error);
+            }
+        }
+    
+        // Llamar a la función cuando se carga la página
+        updateNotificationCounter();
+        
+        // Actualizar cada minuto
+        setInterval(updateNotificationCounter, 60000);
+    
+        // Vista previa de la imagen
+        imageInput.addEventListener('change', function() {
+            imagePreview.innerHTML = '';
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '200px';
+                    imagePreview.appendChild(img);
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    
+        // Validaciones
+        nameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[0-9]/g, '');
+        });
+        
+        priceInput.addEventListener('input', function() {
+            this.setCustomValidity(Number(this.value) < 100 ? 'El precio debe ser mayor a 100 COP' : '');
+        });
+        
+        stockInput.addEventListener('input', function() {
+            this.setCustomValidity(Number(this.value) < 1 ? 'El stock debe ser mayor a 0' : '');
+        });
+    
+        unitInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[0-9]/g, '');
+        });
+    
+        productForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert('No hay token de autenticación. Por favor, inicia sesión.');
+                return;
+            }
+    
+            let errorMessages = [];
+            const name = nameInput.value.trim();
+            const price = Number(priceInput.value);
+            const stock = Number(stockInput.value);
+            const unit = unitInput.value.trim();
+            const expirationDate = expirationDateInput.value;
+            const description = document.getElementById('description').value.trim();
+            const category = document.getElementById('category').value;
+            
+            if (!expirationDate) {
+                errorMessages.push('La fecha de vencimiento es obligatoria');
+            }
+            
+            if (errorMessages.length > 0) {
+                alert('Errores:\n' + errorMessages.join('\n'));
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('price', price);
+            formData.append('stock', stock);
+            formData.append('unit', unit);
+            formData.append('expirationDate', expirationDate);
+            formData.append('description', description);
+            formData.append('category', category);
+            const imageFile = imageInput.files[0];
+            if (imageFile) formData.append('image', imageFile);
+    
+            try {
+                console.log('Enviando Headers:', {
+                    'Authorization': `Bearer ${token}`
+                });
+                
+                const response = await fetch('http://localhost:3001/api/products', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: formData
+                });
+                
+                console.log('Respuesta status:', response.status);
+                const responseData = await response.json();
+                console.log('Respuesta body:', responseData);
+                
+                if (!response.ok) throw new Error(responseData.message || 'Error al agregar el producto');
+                alert('Producto agregado correctamente');
+                productForm.reset();
+                imagePreview.innerHTML = '';
+                
+                // Actualizar contador después de añadir un producto
+                setTimeout(updateNotificationCounter, 1000);
+            } catch (error) {
+                alert('Error al agregar el producto: ' + error.message);
+            }
+        });
+    });
+    
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgroFresh registro</title>
+    <link rel="stylesheet" href="/frontend/css/styleRegistro.css" />
+    <script src="/frontend/js/register.js" defer></script>
+    <script
+    src="https://kit.fontawesome.com/645a463f83.js"
+    crossorigin="anonymous"
+  ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form id="register-form">
+            <h1>Crea tu cuenta</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>o usa tu correo para registarte</span>
+            
+            <label class="rol" for="rol">Selecciona tu rol:</label>
+            <select class="rol2" name="rol" id="rol">
+              <option value="comprador">Comprador</option>
+              <option value="vendedor">Vendedor</option>
+            </select>
+            
+            <input type="text" name="user" placeholder="Nombre" />
+            <input type="text" name="identification" placeholder="Identificación" />
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Ej: 3123456789">
+            <input type="email" name="email" placeholder="Correo" />
+            <div class="password-wrapper">
+              <input type="password" name="password" id="password" placeholder="Contraseña" />
+              <button type="button" class="password-toggle">
+                <i class="fa fa-eye-slash"></i>
+              </button>
+            </div>
+            <div class="password-wrapper">
+              <input type="password" name="passwordVerification" id="passwordVerification" placeholder="Confirmar contraseña" />
+              <button type="button" class="password-toggle">
+                <i class="fa fa-eye-slash"></i>
+              </button>
+            </div>
+            
+            <p class="error-register hidden">Error al iniciar sesión</p>
+            
+            <button type="submit">Registrarse</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form id="login-form">
+            <h1>Iniciar sesión</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>o usa tu cuenta</span>
+            
+            <input type="email" name="mainUser" placeholder="Correo" />
+            <div class="password-wrapper">
+              <input type="password" name="mainPasword" id="mainPassword" placeholder="Contraseña" />
+              <button type="button" class="password-toggle">
+                <i class="fa fa-eye-slash"></i>
+              </button>
+            </div>
+            <a href="forgot-password.html">Olvidaste tu contraseña?</a>
+            
+            <p class="error-login hidden">Error al iniciar sesión</p>
+            
+            <button type="submit">Iniciar sesión</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Bienvenido de nuevo!</h1>
+              <p>
+                Para mantenerse conectado con
+                <span style="color: #70e000">Agrofresh</span>, inicie sesión con
+                su información personal.
+              </p>
+              <button class="ghost" id="signIn">Iniciar sesión</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hola!</h1>
+              <p>
+                Introduce tus datos personales y comienza tu viaje con
+                <span style="color: #761616">Agrofresh</span>
+              </p>
+              <button class="ghost" id="signUp">Registrarse</button>
+            </div>
+          </div>
+        </div>
+        <!-- El mobile-switcher se añadirá dinámicamente con JavaScript -->
+      </div>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleButtons = document.querySelectorAll('.password-toggle');
+        
+        toggleButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const passwordInput = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              icon.classList.remove('fa-eye-slash');
+              icon.classList.add('fa-eye');
+            } else {
+              passwordInput.type = 'password';
+              icon.classList.remove('fa-eye');
+              icon.classList.add('fa-eye-slash');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

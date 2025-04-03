@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AgroFresh</title>
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/645a463f83.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Josefin+Sans&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="normalize.css" /> -->
+   
+    <link rel="stylesheet" href="./css/style.main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="head">
+      <div class="container-navigation">
+        <div class="content-navigation container">
+          <!-- Logo -->
+          <div class="logo">
+            <h1>
+              Agro<span style="color: #70e000">f</span
+              ><span style="color: #006400">re</span
+              ><span style="color: #008000">sh</span>
+            </h1>
+          </div>
+    
+          <!-- Navegación -->
+          <nav class="navigation hidden">
+            <a href="./tienda.html">Tienda</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#reciclaje">Recicla</a>
+        <a href="#contacto">Contacto</a>
+        <a href="./historial-compras.html">Historial de compras</a>
+        
+          </nav>
+    
+          <!-- Íconos y menú -->
+          <div class="icons-menu">
+            <a href="perfilComprador.html" class="icon-link">
+              <i class="fas fa-user"></i> <!-- Ícono de cuenta -->
+            </a>
+          
+            <a href="carrito.html" class="icon-link link-car">
+              <i class="fas fa-shopping-cart"></i> <!-- Ícono de carrito -->
+              
+            </a>
+            <div class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+
+    <section class="menu container">
+      <h2 id="tienda" class="text-dishes">Tienda</h2>
+
+      <section class="container buscar">
+        <div class="buscar-texto">
+          <input type="text" placeholder="Buscar productos..." class="buscar-input">
+          <button class="buscar-boton"><i class="fas fa-search"></i></button>
+        </div>
+      </section>
+
+      <div class="buttons-dishes">
+        <button class="all btn btn-dark-red">Productos del día</button>
+        <button class="frutas btn btn-dark-red">Frutas</button>
+        <button class="verduras btn btn-dark-red">Verduras</button>
+        <button class="tuberculos btn btn-dark-red">Tubérculos</button>
+        <button class="legumbres btn btn-dark-red">Legumbres</button>
+        <button class="cereales btn btn-dark-red">Cereales</button>
+        <button class="condimentos btn btn-dark-red">Condimentos</button>
+        <button class="pecuarios btn btn-dark-red">Productos Pecuarios</button>
+        <button class="derivados btn btn-dark-red">Productos Derivados</button>
+      </div>
+
+      <!--Productos del día  -->
+      <div class="dishes">
+
+
+
+
+        <div class="dish" data-dish="productoDelDia">
+          <img data-src="assets/img/1.jpg" alt="productoDelDia" />
+          <h2>Aprovecha los mejores precios</h2>
+          <p>
+            Encuentra tus productos favoritos con los mejores descuentos
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=productoDelDia">
+              <button class="category-button" data-category="producto-del-dia">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        <!--  -->
+
+
+        <!--FRUTAS -->
+
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/20.jpg" alt="fresas" />
+          <h2>Fresas</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Fresas">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/21.jpg" alt="kiwi" />
+          <h2>kiwi</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=kiwi">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/22.jpg" alt="Naranjas" />
+          <h2>Naranjas</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Naranjas">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/23.jpg" alt="Arandanos" />
+          <h2>Arandanos</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Arandanos">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/24.jpg" alt="Uvas" />
+          <h2>Uvas</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Uvas">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/25.jpg" alt="Peras" />
+          <h2>Peras</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Peras">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+     
+        
+        <div class="dish" data-dish="frutas">
+          <img data-src="assets/img/29.jpg" alt="Sandia" />
+          <h2>Sandia</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Sandia">
+              <button class="category-button" data-category="frutas">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <!--Verduras -->
+        
+        <div class="dish" data-dish="verduras">
+          <img data-src="assets/img/30.jpg" alt="Pimentón" />
+          <h2>Pimentón</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Pimentón">
+              <button class="category-button" data-category="verduras">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="verduras">
+          <img data-src="assets/img/31.jpg" alt="Tomate" />
+          <h2>Tomate</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Tomate">
+              <button class="category-button" data-category="verduras">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        
+        <div class="dish" data-dish="verduras">
+          <img data-src="assets/img/34.jpg" alt="Mazorca" />
+          <h2>Mazorca</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Mazorca">
+              <button class="category-button" data-category="verduras">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="verduras">
+          <img data-src="assets/img/36.jpg" alt="Pimentón" />
+          <h2>Pimentón</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Pimentón">
+              <button class="category-button" data-category="verduras">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="verduras">
+          <img data-src="assets/img/39.jpg" alt="Brócoli" />
+          <h2>Brócoli</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Brócoli">
+              <button class="category-button" data-category="verduras">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <!--tuberculos -->
+        
+        <div class="dish" data-dish="tuberculos">
+          <img data-src="assets/img/35.jpg" alt="Zanahoria" />
+          <h2>Zanahoria</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Zanahoria">
+              <button class="category-button" data-category="tuberculos">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="tuberculos">
+          <img data-src="assets/img/32.jpg" alt="Patatas" />
+          <h2>Patatas</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Patatas">
+              <button class="category-button" data-category="tuberculos">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="dish" data-dish="tuberculos">
+          <img data-src="assets/img/38.jpg" alt="Yuca" />
+          <h2>Yuca</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Yuca">
+              <button class="category-button" data-category="tuberculos">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <!-- LEGUMBRES -->
+        <div class="dish" data-dish="legumbres">
+          <img data-src="assets/img/40.jpg" alt="Fríjol" />
+          <h2>Fríjol</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Fríjol">
+              <button class="category-button" data-category="legumbres">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        <!-- condimentos -->
+        <div class="dish" data-dish="condimentos">
+          <img data-src="assets/img/42.jpg" alt="Laurel" />
+          <h2>Laurel</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          </p>
+          <div class="price">
+            <p></p>
+            <a href="/frontend/tienda.html?product=Laurel">
+              <button class="category-button" data-category="condimentos">
+                <i class="btn-inicio fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+      
+<!-- cereales -->
+<div class="dish" data-dish="cereales">
+  <img data-src="assets/img/41.jpg" alt="Quinoa" />
+  <h2>Quinoa</h2>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+  </p>
+  <div class="price">
+    <p></p>
+    <button class="category-button" data-category="cereales"><i class="fa-solid fa-basket-shopping"></i></button>
+  </div>
+ </div>
+ <!-- pecuarios -->
+ <div class="dish" data-dish="pecuarios">
+  <img data-src="assets/img/43.jpg" alt="Huevos" />
+  <h2>Huevos</h2>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+  </p>
+  <div class="price">
+    <p></p>
+    <button class="category-button" data-category="pecuarios"><i class="fa-solid fa-basket-shopping"></i></button>
+  </div>
+ </div>
+ <!-- derivados -->
+ <div class="dish" data-dish="derivados">
+  <img data-src="assets/img/44.jpg" alt="Yogurt" />
+  <h2>Yogurt</h2>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+  </p>
+  <div class="price">
+    <p></p>
+    <button class="category-button" data-category="derivados"><i class="fa-solid fa-basket-shopping"></i></button>
+  </div>
+ </div>
+
+</div>
+ <!-- CONTENT HEADER-->
+ <div id="nosotros" class="container-header">
+  <div class="text-header">
+    <h2>¡Bienvenido!</h2>
+    <a href="#" class="btn border" >Del campo a tus manos</a>
+  </div>
+  <video autoplay loop src="assets/video/mp4.mp4" ></video>
+</div>
+
+
+    <!-- SECCIÓN NOSOTROS -->
+    <div id="nosotros" class="container-about-us container">
+      <div class="text-about-us">
+        <p class="welcome">Somos</p>
+        <h1>AgroFresh</h1>
+        <p>
+          Conectamos con los productores locales de nuestra región y disfruta de
+          alimentos frescos, sin intermediarios, a precios justos. Agro<span
+            style="color: #70e000"
+            >f</span
+          ><span style="color: #006400">re</span
+          ><span style="color: #008000">sh</span> revoluciona la forma en que
+          compras y consumes productos agrícolas.
+        </p>
+        <a href="#contacto" class="btn btn-red">Contáctanos</a>
+      </div>
+      <div class="images-about-us">
+        <!-- <div class="img1">
+          <img data-src="assets/img/4.jpg" alt="frutas" />
+        </div> -->
+
+        <div class="img2">
+          <img data-src="assets/img/4.jpg" alt="semilla" />
+          <img data-src="assets/img/3.jpg" alt="frutasYVerduras" />
+        </div>
+      </div>
+    </div>
+
+<!-- Tienda-->
+    <section class="menu container">
+  
+    <!-- Diseño separador -->
+
+    <div class="separator">
+      <div class="container-separator container">
+        <h2 id="reciclaje">Recuerda</h2>
+        <p>
+          <span style="color: #ffba08">¡Tu compra, más sostenible! </span >
+             Devuelve los residuos orgánicos de tus compras y ayúdanos a crear un ciclo 
+            de vida más sostenible para nuestros productos. <a href="./assets/pdf/Infografía de Residuos Orgánicos Para Compost Ilustrado Verde y Marrón.pdf" style="color: #70e000;" target="_blank">Más información</a>
+        </p>
+        <a href="#contacto" class="btn btn-red">Contáctanos</a>
+      </div>
+    </div>
+    </section>
+
+    <!-- CHEF -->
+    <section  class="chef container">
+      <h2 id="preguntas">Preguntas frecuentes</h2>
+      <div class="content-chef">
+        <div class="text-chef">
+          <h4>Preguntas generales sobre los productos 
+            <svg style="color: #ffba08;" class="svg-add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z" fill="currentColor"/>
+            </svg>
+          </h4>
+          
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            
+          </p>
+          <h4>Preguntas sobre pedidos y envíos
+            <svg style="color: #ffba08;"  class="svg-add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z" fill="currentColor"/>
+            </svg>
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            
+          </p>
+          <h4>Preguntas sobre devolución de residuos orgánicos
+            <svg  style="color: #ffba08;" class="svg-add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z" fill="currentColor"/>
+            </svg>
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          
+          </p>
+          <h4>Preguntas sobre otros servicios
+            <svg  style="color: #ffba08;" class="svg-add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z" fill="currentColor"/>
+            </svg>
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          
+          </p>
+          <a href="#" class="btn btn-dark-red">Visita nuestro blog</a>
+        </div>
+
+        <div class="img-chef">
+          <img data-src="assets/img/46.jpg" alt="Vendedor" />
+        </div>
+        
+      </div>
+    </section>
+    <br /><br /><br /><br />
+
+    <!-- CONTACTO -->
+    <div id="contacto" class="contact-form container">
+      <div class="contact-information">
+        <h3>Contacto</h3>
+        <p><i class="fa-solid fa-location-dot"></i> 14. Colombia 78654</p>
+        <p><i class="fa-solid fa-envelope"></i> AgroFresh@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>+57 345678922</p>
+        <div class="social-network">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-form">
+          <label for="name">Nombres</label>
+          <input type="text" placeholder="Ingresa tu nombre" id="name" />
+        </div>
+
+        <div class="input-form">
+          <label for="lastname">Apellidos</label>
+          <input type="text" placeholder="Ingresa tu apellido" id="last-name" />
+        </div>
+
+        <div class="input-form">
+          <label for="email">Email</label>
+          <input type="text" placeholder="¿Dónde podemos contactarnos contigo?" id="email" />
+        </div>
+
+        <div class="input-form">
+          <label for="phone">Télefono</label>
+          <input type="text" placeholder="Ingresa tu télefono de contacto" id="phone" />
+        </div>
+
+        <div class="input-form">
+          <label for="message">Mensaje</label>
+          <textarea class="mensaje" placeholder="Ingresa tus dudas o sugerencias"></textarea>
+          <div class="btn-form">
+            <input type="submit" value="Enviar" class="btn btn-dark-red" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- fOOTER -->
+    <div class="foot-footer">
+      <div class="container-footer">
+        <div class="info">
+          <h3>Dirección</h3>
+          <p>14. Ipiales Nariño 78654</p>
+        </div>
+
+        <div class="info">
+          <h3>Días de ofertas</h3>
+          <p>Sábados y Domingos</p>
+          <p>+57 345678922</p>
+        </div>
+
+        <div class="info">
+          <h3>Horario</h3>
+          <p>Lunes a Domingo</p>
+          <div class="social-network-footer">
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+
+        <div class="info">
+          <h3>Noticias</h3>
+          <p>Suscribete para recibir Noticias</p>
+          <input type="text" placeholder="Email" class="input-text" />
+          <input
+            type="button"
+            value="Suscribirse"
+            class="btn btn-dark-red input-sub"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="final-footer">Todos los derechos reservados</div>
+    <script src="./js/main.js"></script>
+  
+  </body>
+</html>

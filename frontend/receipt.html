@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Compra</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            padding: 20px;
+        }
+        
+        .receipt-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #eee;
+            position: relative;
+        }
+        
+        .receipt-header h2 {
+            color: #069728;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .order-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .order-number {
+            font-weight: bold;
+            color: #bb1b0f;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+        }
+        
+        .receipt-items {
+            margin-bottom: 30px;
+        }
+        
+        .receipt-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        
+        .receipt-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .item-image {
+            width: 80px;
+            margin-right: 20px;
+        }
+        
+        .item-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-name {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .item-price, .item-quantity, .item-total {
+            color: #6c757d;
+            margin: 5px 0;
+        }
+        
+        .item-total {
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .receipt-totals {
+            margin-top: 30px;
+            text-align: right;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .receipt-totals h3 {
+            color: #28a745;
+            font-size: 1.4em;
+            margin-top: 10px;
+        }
+        
+        .payment-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            border-left: 5px solid #3fe24f;
+        }
+        
+        .payment-info h4 {
+            color: #067809;
+            margin-top: 0;
+        }
+        
+        #cash-instructions {
+            line-height: 1.8;
+        }
+        
+        #payment-code {
+            font-size: 1.4em;
+            letter-spacing: 3px;
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+            font-family: monospace;
+        }
+        
+        .actions {
+            margin-top: 40px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: #1db13a;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0f5301;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: #5e6062;
+            color: white;
+            border: none;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #69a676;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-icon {
+            margin-right: 8px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .receipt-container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            .actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <div class="receipt-container">
+                <div class="receipt-header">
+                    <h2>¡Compra Exitosa!</h2>
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i> Tu pedido ha sido procesado correctamente
+                    </div>
+                    <div class="order-details">
+                        <p>Número de Orden: <span class="order-number" id="order-id">--</span></p>
+                        <p>Fecha: <span id="order-date">--</span></p>
+                    </div>
+                </div>
+                
+                <div class="receipt-items" id="receipt-items">
+                    <!-- Items will be dynamically added here -->
+                </div>
+                
+                <div class="receipt-totals">
+                    <p><strong>Subtotal:</strong> <span id="subtotal-amount">$ 0.00</span></p>
+                    <p><strong>Gastos de envío:</strong> <span id="shipping-amount">$ 0.00</span></p>
+                    <h3>Total: <span id="total-amount">$ 0.00</span></h3>
+                </div>
+                
+                <div class="payment-info">
+                    <h4><i class="fas fa-credit-card"></i> Información de Pago</h4>
+                    <p><strong>Método de pago:</strong> <span id="payment-method">--</span></p>
+                    <p id="cash-instructions" style="display: none;">
+                        Para completar tu compra en efectivo, presenta este código en cualquier punto de pago autorizado:
+                        <br><br>
+                        <strong id="payment-code">RF-123456789</strong>
+                        <br>
+                        El código es válido por 24 horas. Después de realizar el pago, tu pedido será procesado.
+                    </p>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn-primary" onclick="window.print()">
+                        <i class="fas fa-print btn-icon"></i> Imprimir Recibo
+                    </button>
+                    <button class="btn-secondary" onclick="window.location.href='main.html'">
+                        <i class="fas fa-store btn-icon"></i> Volver a la Tienda
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/receipt.js"></script>
+</body>
+</html>
