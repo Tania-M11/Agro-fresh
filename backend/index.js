@@ -37,7 +37,7 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
 // Configuración de CORS
-const origenesPermitidos = ["http://127.0.0.1:3001", "http://127.0.0.1:5501",  "https://agro-fresh-3.onrender.com"];
+const origenesPermitidos = ["http://127.0.0.1:3001", "http://127.0.0.1:5501",  "https://agro-fresh-3.onrender.com, "https://agro-fresh-3.onrender.com", "https://agro-fresh-backend.onrender.com/api/login"];
 
 const corsOption = {
   origin: (origin, callback) => {
