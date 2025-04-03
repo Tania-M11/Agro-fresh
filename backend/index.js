@@ -49,7 +49,11 @@ const corsOption = {
   },
   credentials: true, // Permite cookies y autenticación
 };
-app.use(cors(corsOption)); 
+// Solución temporal para depuración
+app.use(cors({
+  origin: true,  // Permite todas las solicitudes
+  credentials: true
+}));
 
 // Rutas para servir archivos HTML
 app.get("/", (req, res) => res.sendFile(path.join(__dirname+ '/../frontend/register.html')));
