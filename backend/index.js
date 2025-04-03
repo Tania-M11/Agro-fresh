@@ -57,7 +57,9 @@ app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "pages", "r
 app.get("/forgot-password", (req, res) => res.sendFile(path.join(__dirname, "pages", "forgot-password.html")));
 
 // Rutas de la API
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, "../frontend")));
+
 
 app.use("/api/products", ProductRoutes);
 app.use("/api/orders", OrderRoutes);
