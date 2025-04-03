@@ -53,8 +53,8 @@ app.use(cors(corsOption));
 
 // Rutas para servir archivos HTML
 app.get("/", (req, res) => res.sendFile(path.join(__dirname+ '/../frontend/register.html')));
-app.get("/register", (req, res) => res.sendFile(path.join(__dirname+ '/../frontend/register.html")));
-app.get("/forgot-password", (req, res) => res.sendFile(path.join(__dirname+ '/../frontend/forgot-password.html")));
+app.get("/register", (req, res) => res.sendFile(path.join(__dirname, "pages", "register.html")));
+app.get("/forgot-password", (req, res) => res.sendFile(path.join(__dirname, "pages", "forgot-password.html")));
 
 // Rutas de la API
 app.use(express.static(path.join(__dirname, "../frontend")));
