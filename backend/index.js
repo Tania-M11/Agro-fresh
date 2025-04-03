@@ -13,7 +13,7 @@ import ProfileRoutes from "./src/routes/profile.routes.js";
 import AddressRoutes from "./src/routes/direccion.routes.js"; 
 import authentication from "./src/controllers/authentication.js";
 import paymentRoutes from "./src/routes/payment.routes.js";
-import authRoutes from "./src/routes/auth.routes.js";  // Corregido nombre de archivo
+import authRoutes from "./src/routes/auth.routhes.js"; 
 import notificationRoutes from "./src/routes/notificacion.routes.js";
 import setupCronJobs from "./src/schedulers/cron.js";
 
