@@ -42,19 +42,20 @@ registro.addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch("http://localhost:3001/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
-        user, 
-        identification, 
-        email, 
-        password, 
-        passwordVerification, 
-        role,
-        phone // Added phone to the request body
-      })
-    });
+    const response = await fetch("https://agro-fresh-backend.onrender.com/api/register", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ 
+    user, 
+    identification, 
+    email, 
+    password, 
+    passwordVerification, 
+    role,
+    phone // Added phone to the request body
+  })
+});
+
     
     const data = await response.json();
     if (!response.ok) throw new Error(data.message || "Error en el registro");
